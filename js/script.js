@@ -91,12 +91,11 @@ $(function () {
       function (homeHtml) {
         // TODO: STEP 2: Call chooseRandomCategory and assign the result to chosenCategoryShortName
         var chosenCategory = chooseRandomCategory(categories);
-        var chosenCategoryShortName = chosenCategory.short_name; // Add this line
+        var chosenCategoryShortName = chosenCategory.short_name;
 
         // TODO: STEP 3: Substitute {{randomCategoryShortName}} in homeHtml with chosenCategoryShortName
-        var homeHtmlToInsertIntoMainPage = insertProperty(
-          homeHtml,
-          "randomCategoryShortName",
+        var homeHtmlToInsertIntoMainPage = homeHtml.replace(
+          /{{randomCategoryShortName}}/g,
           chosenCategoryShortName
         );
 
@@ -107,7 +106,7 @@ $(function () {
         }
       },
       false
-    ); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+    );
   }
 
   // Given an array of category objects, returns a random category object.
