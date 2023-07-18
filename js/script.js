@@ -91,12 +91,13 @@ $(function () {
       function (homeHtml) {
         // TODO: STEP 2: Call chooseRandomCategory and assign the result to chosenCategoryShortName
         var chosenCategory = chooseRandomCategory(categories);
+        var chosenCategoryShortName = chosenCategory.short_name; // Add this line
 
-        // TODO: STEP 3: Substitute {{randomCategoryShortName}} in homeHtml with chosenCategory.short_name
+        // TODO: STEP 3: Substitute {{randomCategoryShortName}} in homeHtml with chosenCategoryShortName
         var homeHtmlToInsertIntoMainPage = insertProperty(
           homeHtml,
           "randomCategoryShortName",
-          chosenCategory.short_name
+          chosenCategoryShortName
         );
 
         // TODO: STEP 4: Insert the produced HTML from Step 3 into the main page
