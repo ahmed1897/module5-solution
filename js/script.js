@@ -95,7 +95,7 @@ $(function () {
 
         // TODO: STEP 3: Substitute {{randomCategoryShortName}} in homeHtml with chosenCategoryShortName
         var homeHtmlToInsertIntoMainPage = homeHtml.replace(
-          /\{\{randomCategoryShortName\}\}/g,
+          /{{randomCategoryShortName}}/g,
           chosenCategoryShortName
         );
 
